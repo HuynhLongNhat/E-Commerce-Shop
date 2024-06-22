@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import { Toaster } from "@/components/ui/toaster";
 import { Recursive } from 'next/font/google'
 import Navbar from "@/components/NavBar";
+import { Provider } from "@radix-ui/react-toast";
 
 
 
@@ -25,7 +26,9 @@ export default function RootLayout({
         <Navbar />
         <main className='flex grainy-light flex-col min-h-[calc(100vh-3.5rem-1px)]'>
           <div className='flex-1 flex flex-col h-full'>
-            {children}
+            <Provider>
+              {children}
+            </Provider>
           </div>
           <Footer />
         </main>
